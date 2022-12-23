@@ -13,6 +13,7 @@
 package org.github.flytreeleft.nexus3.keycloak.plugin.internal;
 
 import java.util.Collections;
+import java.util.List;
 import java.util.Set;
 import javax.enterprise.inject.Typed;
 import javax.inject.Named;
@@ -52,6 +53,16 @@ public class KeycloakAuthorizationManager extends AbstractReadOnlyAuthorizationM
     @Override
     public Privilege getPrivilege(String privilegeId) throws NoSuchPrivilegeException {
         throw new NoSuchPrivilegeException("Keycloak plugin doesn't support privileges");
+    }
+
+    @Override
+    public Privilege getPrivilegeByName(String privilegeName) throws NoSuchPrivilegeException {
+        throw new NoSuchPrivilegeException("Keycloak plugin doesn't support privileges");
+    }
+
+    @Override
+    public List<Privilege> getPrivileges(Set<String> privilegeIds) {
+        return Collections.emptyList();
     }
 
     @Override
